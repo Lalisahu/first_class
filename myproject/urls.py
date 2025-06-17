@@ -23,6 +23,6 @@ urlpatterns = [
     path('app/',views.app, name='app'),
     path('home/',views.home, name='home'),
     path('about/',views.About, name='about'),
-    path('contact/',views.Contact, name='contact'),
+    path('contact/',views.contact, name='contact'),
     path('services/',views.Services, name='services'),
 ]

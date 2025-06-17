@@ -1,11 +1,29 @@
 {% extends 'base.html' %}
 {% block body %}
-<div class="card" style="width: 18rem;">
-  <img class="card-img-top" src=".../100px180/" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
+<div class="container">
+  <form method="POST" action="/contact/">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name">
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email address</label>
+      <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email">
+    </div>
+
+    <div class="form-group">
+      <label for="phone">Phone</label>
+      <input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter your phone number">
+    </div>
+
+    <div class="form-group">
+      <label for="desc">Your Message</label>
+      <textarea class="form-control" id="desc" name="desc" rows="3"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
 </div>
 {% endblock body %}
